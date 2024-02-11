@@ -1,6 +1,10 @@
 {
   "name": "top-restaurant-page",
   "module": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
