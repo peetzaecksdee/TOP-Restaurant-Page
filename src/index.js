@@ -25,10 +25,22 @@ function createHeader() {
   return header;
 }
 
+function createMain() {
+  const main = document.createElement('main');
+  return main;
+}
+
+function createFooter() {
+  const footer = document.createElement('footer');
+  return footer
+}
+
 function init() {
   const content = document.getElementById('content');
 
   content.appendChild(createHeader());
+  content.appendChild(createMain());
+  content.appendChild(createFooter());
 }
 
 init();
