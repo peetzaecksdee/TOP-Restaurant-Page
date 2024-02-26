@@ -2,8 +2,7 @@
   "name": "top-restaurant-page",
   "module": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "watch": "webpack --watch --config webpack.dev.js"
+    "build": "webpack"
   },
   "devDependencies": {
     "@types/bun": "latest",

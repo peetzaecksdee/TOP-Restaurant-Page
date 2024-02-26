@@ -29,10 +29,11 @@ function loadHome() {
   subtitle2.textContent = 'Ensured the best quality';
 
   main.appendChild(homeContainer);
+
   homeContainer.appendChild(title);
   homeContainer.appendChild(subtitle1);
   homeContainer.appendChild(image);
-  homeContainer.appendChild(subtitle1);
+  homeContainer.appendChild(subtitle2);
 }
 
 export default loadHome;
