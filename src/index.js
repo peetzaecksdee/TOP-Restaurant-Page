@@ -1,3 +1,5 @@
+import loadHome from './home.js';
+
 /**
  * Set the button to active
  * @param {HTMLButtonElement} button 
@@ -56,9 +58,9 @@ function createHeader() {
     setActiveButton(contactBtn);
   });
   
+  nav.appendChild(homeBtn);
   nav.appendChild(menuBtn);
   nav.appendChild(contactBtn);
-  nav.appendChild(homeBtn);
 
   return header;
 }
@@ -79,6 +81,7 @@ function init() {
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
+  loadHome();
 }
 
 init();
