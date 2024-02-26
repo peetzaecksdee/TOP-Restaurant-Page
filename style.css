@@ -129,3 +129,31 @@ main {
   width: 50%;
   height: 50%;
 }
+
+/* Footer contents */
+
+footer {
+  padding: 12px;
+  background-color: var(--header-footer-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.credit {
+  text-align: center;
+  font-size: .95rem;
+}
+
+.credit-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
