@@ -1,3 +1,19 @@
+/**
+ * Set the button to active
+ * @param {HTMLButtonElement} button 
+ */
+function setActiveButton(button) {
+  const buttons = document.querySelectorAll('.btn-nav');
+
+  buttons.forEach((btn) => {
+    if (btn !== button) {
+      btn.classList.remove('active');
+    }
+  });
+
+  button.classList.add('active');
+}
+
 function createButton(text) {
   const btn = document.createElement('button')
   btn.classList.add('btn-nav');
@@ -14,13 +30,35 @@ function createHeader() {
 
   const homeBtn = createButton('Home');
   homeBtn.classList.add('active');
-  nav.appendChild(homeBtn);
+  homeBtn.addEventListener('click', () => {
+    if (homeBtn.classList.contains('active')) {
+      return;
+    }
 
+    setActiveButton(homeBtn);
+  });
+  
   const menuBtn = createButton('Menu');
-  nav.appendChild(menuBtn);
+  menuBtn.addEventListener('click', () => {
+    if (menuBtn.classList.contains('active')) {
+      return;
+    }
 
+    setActiveButton(menuBtn);
+  });
+  
   const contactBtn = createButton('Contact');
+  contactBtn.addEventListener('click', () => {
+    if (contactBtn.classList.contains('active')) {
+      return;
+    }
+
+    setActiveButton(contactBtn);
+  });
+  
+  nav.appendChild(menuBtn);
   nav.appendChild(contactBtn);
+  nav.appendChild(homeBtn);
 
   return header;
 }
