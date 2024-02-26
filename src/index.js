@@ -72,6 +72,24 @@ function createMain() {
 
 function createFooter() {
   const footer = document.createElement('footer');
+  const credit = document.createElement('span');
+  credit.textContent = 'Another day, another project';
+  credit.classList.add('credit');
+
+  const abbreviation = document.createElement('a');
+  abbreviation.href = 'https://github.com/peetzaecksdee';
+  abbreviation.target = '_blank';
+  abbreviation.classList.add('credit-a');
+
+  const img = document.createElement('img');
+  img.src = '../assets/images/pizza.jpg';
+  img.alt = 'My github';
+  img.classList.add('credit-img');
+
+  abbreviation.appendChild(img);
+  footer.appendChild(credit);
+  footer.appendChild(abbreviation);
+
   return footer
 }
 
