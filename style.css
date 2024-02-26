@@ -1,7 +1,17 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('../assets/fonts/Nunito-Medium.ttf') format('truetype'),
+   url('../assets/fonts/Nunito-MediumItalic.ttf') format('truetype'),
+   url('../assets/fonts/Nunito-Bold.ttf') format('truetype'),
+   url('../assets/fonts/Nunito-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --content-color: hsl(34, 33%, 56%);
   --header-footer-color: hsl(30, 31%, 29%);
-  --box-color: hsla(32, 29%, 38%, .7);
+  --container-color: hsla(32, 29%, 38%, .7);
   --main-size: 85vh;
   --header-size: 10vh;
   --footer-size: 5vh;
@@ -9,6 +19,7 @@
 }
 
 * {
+  font-family: 'Nunito';
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -17,6 +28,7 @@
 body {
   width: 100vw;
   height: 100vh;
+  color: var(--font-color)
 }
 
 #content {
@@ -32,6 +44,8 @@ body {
 header {
   background-color: var(--header-footer-color);
   height: var(--header-size);
+  border-radius: 0 0 16px 16px;
+
   display: flex;
   align-items: end;
   justify-content: center;
@@ -80,4 +94,45 @@ nav {
 
 main {
   height: var(--main-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container,
+.sub-container {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 40vw;
+  border-radius: 16px;
+  background-color: var(--container-color);
+  padding: 0 48px;
+}
+
+.sub-container {
+  padding-bottom: 48px;
+}
+
+.title,
+.subtitle {
+  font-style: italic;
+  text-align: center;
+  padding: 32px 0;
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 3.3rem;
+  font-weight: bold;
+}
+
+.sub-container > .img {
+  width: 50%;
+  height: 50%;
 }
