@@ -50,7 +50,7 @@ function createHeader() {
       return;
     }
 
-    debounce = true
+    debounce = true;
     currentPage.style = 'opacity: 0';
     setTimeout(() => {
       clearMain();
@@ -61,10 +61,11 @@ function createHeader() {
   
   const menuBtn = createButton('Menu');
   menuBtn.addEventListener('click', () => {
-    if (menuBtn.classList.contains('active')) {
+    if (menuBtn.classList.contains('active') || debounce) {
       return;
     }
     
+    debounce = true;
     currentPage.style = 'opacity: 0';
     setTimeout(() => {
       clearMain();
@@ -75,7 +76,7 @@ function createHeader() {
   
   const contactBtn = createButton('Contact');
   contactBtn.addEventListener('click', () => {
-    if (contactBtn.classList.contains('active')) {
+    if (contactBtn.classList.contains('active') || debounce) {
       return;
     }
 
