@@ -25,12 +25,18 @@ function createButton(text) {
   return btn;
 }
 
+function clearMain() {
+  const main = document.querySelector('main');
+
+  main.innerHTML = '';
+}
+
 function createHeader() {
   const header = document.createElement('header');
   
   const nav = document.createElement('nav');
   header.appendChild(nav);
-
+  
   const homeBtn = createButton('Home');
   homeBtn.classList.add('active');
   homeBtn.addEventListener('click', () => {
@@ -38,7 +44,9 @@ function createHeader() {
       return;
     }
 
+    clearMain();
     setActiveButton(homeBtn);
+    loadHome();
   });
   
   const menuBtn = createButton('Menu');
@@ -46,8 +54,10 @@ function createHeader() {
     if (menuBtn.classList.contains('active')) {
       return;
     }
-
+    
+    clearMain();
     setActiveButton(menuBtn);
+    loadMenu();
   });
   
   const contactBtn = createButton('Contact');
@@ -100,7 +110,7 @@ function init() {
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
-  loadMenu();
+  loadHome();
 }
 
 init();
