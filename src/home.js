@@ -32,6 +32,8 @@ function loadHome() {
   homeContainer.appendChild(titleContainer);
   homeContainer.appendChild(image);
   homeContainer.appendChild(text);
+
+  return homeContainer
 }
 
 export default loadHome;

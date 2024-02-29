@@ -1,6 +1,9 @@
 import loadHome from './home.js';
 import loadMenu from './menu.js';
 
+let currentPage;
+let debounce = false;
+
 /**
  * Set the button to active
  * @param {HTMLButtonElement} button 
@@ -29,6 +32,9 @@ function clearMain() {
   const main = document.querySelector('main');
 
   main.innerHTML = '';
+  setTimeout(() => {
+    debounce = false;
+  }, 1000)
 }
 
 function createHeader() {
@@ -40,13 +46,17 @@ function createHeader() {
   const homeBtn = createButton('Home');
   homeBtn.classList.add('active');
   homeBtn.addEventListener('click', () => {
-    if (homeBtn.classList.contains('active')) {
+    if (homeBtn.classList.contains('active') || debounce) {
       return;
     }
 
-    clearMain();
-    setActiveButton(homeBtn);
-    loadHome();
+    debounce = true
+    currentPage.style = 'opacity: 0';
+    setTimeout(() => {
+      clearMain();
+      setActiveButton(homeBtn);
+      currentPage = loadHome();
+    }, 1000);
   });
   
   const menuBtn = createButton('Menu');
@@ -55,9 +65,12 @@ function createHeader() {
       return;
     }
     
-    clearMain();
-    setActiveButton(menuBtn);
-    loadMenu();
+    currentPage.style = 'opacity: 0';
+    setTimeout(() => {
+      clearMain();
+      setActiveButton(menuBtn);
+      currentPage = loadMenu();
+    }, 1000);
   });
   
   const contactBtn = createButton('Contact');
@@ -110,7 +123,7 @@ function init() {
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
-  loadHome();
+  currentPage = loadHome();
 }
 
 init();

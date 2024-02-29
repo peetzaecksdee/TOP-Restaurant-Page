@@ -133,6 +133,8 @@ function loadMenu() {
   }
 
   main.appendChild(menuContainer);
+
+  return menuContainer;
 }
 
 export default loadMenu;
