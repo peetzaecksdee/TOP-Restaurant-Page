@@ -1,4 +1,5 @@
 import loadHome from './home.js';
+import loadMenu from './menu.js';
 
 /**
  * Set the button to active
@@ -99,7 +100,7 @@ function init() {
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
-  loadHome();
+  loadMenu();
 }
 
 init();

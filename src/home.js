@@ -1,3 +1,13 @@
+{/* 
+<div class="home-container">
+  <div class="title-container">
+    <span class="title">Peetza's Café</span>
+    <span class="subtitle">Truly yours Café</span>
+  </div>
+  <img src="../assets/images/como-hacer-cafe.png" alt="Coffee" class="img">
+  <span class="text">Ensured the best quality</span>
+</div> */}
+
 import {createTitle} from './shared.js';
 
 function loadHome() {
