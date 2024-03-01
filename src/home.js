@@ -9,6 +9,7 @@
 </div> */}
 
 import {createTitle} from './shared.js';
+import cafeImage from '../assets/images/como-hacer-cafe.png';
 
 function loadHome() {
   const main = document.querySelector('main');
@@ -18,8 +19,8 @@ function loadHome() {
 
   const titleContainer = createTitle('Peetza\'s Café', 'Truly Yours Café');
 
-  const image = document.createElement('img');
-  image.src = '../assets/images/como-hacer-cafe.png';
+  const image = new Image();
+  image.src = cafeImage;
   image.alt = 'Coffee';
   image.classList.add('img');
 
