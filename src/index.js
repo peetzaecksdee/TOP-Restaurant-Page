@@ -1,5 +1,6 @@
 import loadHome from './home.js';
 import loadMenu from './menu.js';
+import loadContact from './contact.js';
 
 let currentPage;
 let debounce = false;
@@ -34,7 +35,7 @@ function clearMain() {
   main.innerHTML = '';
   setTimeout(() => {
     debounce = false;
-  }, 1000)
+  }, 750)
 }
 
 function createHeader() {
@@ -56,7 +57,7 @@ function createHeader() {
       clearMain();
       setActiveButton(homeBtn);
       currentPage = loadHome();
-    }, 1000);
+    }, 750);
   });
   
   const menuBtn = createButton('Menu');
@@ -71,7 +72,7 @@ function createHeader() {
       clearMain();
       setActiveButton(menuBtn);
       currentPage = loadMenu();
-    }, 1000);
+    }, 750);
   });
   
   const contactBtn = createButton('Contact');
@@ -79,8 +80,14 @@ function createHeader() {
     if (contactBtn.classList.contains('active') || debounce) {
       return;
     }
-
-    setActiveButton(contactBtn);
+    
+    debounce = true;
+    currentPage.style = 'opacity: 0';
+    setTimeout(() => {
+      clearMain();
+      setActiveButton(contactBtn);
+      currentPage = loadContact();
+    }, 750);
   });
   
   nav.appendChild(homeBtn);

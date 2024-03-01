@@ -46,6 +46,7 @@ header {
   background-color: var(--header-footer-color);
   height: var(--header-size);
   border-radius: 0 0 16px 16px;
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, .2);
 
   display: flex;
   align-items: end;
@@ -116,8 +117,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fade-in 1s;
-  transition: opacity 1s;
+  animation: fade-in 750ms;
+  transition: opacity 750ms;
 }
 
 .home-container,
@@ -202,6 +203,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  border-radius: 16px 16px 0 0;
 }
 
 .credit {
