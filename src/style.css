@@ -29,7 +29,8 @@
 body {
   width: 100vw;
   height: 100vh;
-  color: var(--font-color)
+  color: var(--font-color);
+  overflow: hidden;
 }
 
 #content {

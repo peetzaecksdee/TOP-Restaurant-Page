@@ -115,8 +115,8 @@ function createFooter() {
   abbreviation.target = '_blank';
   abbreviation.classList.add('credit-a');
 
-  const img = document.createElement('img');
-  img.src = '../assets/images/pizza.jpg';
+  const img = new Image();
+  img.src = require('../assets/images/pizza.jpg');
   img.alt = 'My github';
   img.classList.add('credit-img');
 
