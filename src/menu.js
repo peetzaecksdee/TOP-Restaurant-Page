@@ -48,37 +48,43 @@
 </div> */}
 
 import {createTitle} from './shared.js';
+import Doppio from '../assets/images/Doppio.jpg';
+import Americano from '../assets/images/Americano.jpg';
+import Espresso from '../assets/images/Espresso.jpg';
+import Latte from '../assets/images/Latte.jpg';
+import Cappuccino from '../assets/images/Cappuccino.jpg';
+import Mocha from '../assets/images/Mocha.jpg';
 
 const info = [
   [
     'Doppio',
     'Our doppio packs a powerful punch with two expertly pulled espresso shots.',
-    '../assets/images/Doppio.jpg',
+    Doppio,
   ],
   [
     'Americano',
     'The Americano starts with our rich espresso shots.',
-    '../assets/images/Americano.jpg',
+    Americano,
   ],
   [
     'Espresso',
     'Rich & bold, our espresso ignites the senses. Enjoy it solo or customize your favorite latte.',
-    '../assets/images/Espresso.jpg',
+    Espresso,
   ],
   [
     'Latte',
     'Creamy & smooth, our latte is a delightful blend of espresso and steamed milk, topped with a touch of foam.',
-    '../assets/images/Latte.jpg',
+    Latte,
   ],
   [
     'Cappuccino',
     'Rich & velvety, our cappuccino combines espresso, steamed milk, and foamy milk for a perfect balance of flavors.',
-    '../assets/images/Cappuccino.jpg',
+    Cappuccino,
   ],
   [
     'Mocha',
     'Indulge in chocolatey bliss. Rich espresso, smooth milk, and decadent chocolate combine for a delightful treat.',
-    '../assets/images/Mocha.jpg',
+    Mocha,
   ],
 ]
 
@@ -104,8 +110,8 @@ function createItemContainer(itemInfo, invert) {
   itemContainer.classList.add('item-container');
 
   const description = createDescription(itemInfo[0], itemInfo[1]);
-
-  const image = document.createElement('img');
+  
+  const image = new Image();
   image.src = itemInfo[2];
   image.alt = itemInfo[0];
 
